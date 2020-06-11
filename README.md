@@ -1,7 +1,7 @@
 # dec4me
 Binary to Decimal Converter using HTML, CSS and Javascript
 
-Based on this idea: [Din2Dec](https://github.com/florinpop17/app-ideas)
+Based on this idea: [Bin2Dec](https://github.com/florinpop17/app-ideas)
 
 # Bin2Dec
 
