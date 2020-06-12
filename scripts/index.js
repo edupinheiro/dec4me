@@ -5,14 +5,15 @@ const reg = /[^01]/g;
 
 const keyPressHandler = (event) => {
     
-    const binary = event.target.value;
+    const number = event.target.value;
 
-    if(binary == "") {
+    if(number == "") {
         inputDecimal.value = "";
+        return
     }
 
-    if(isBinary(binary)) {
-        convertBinaryToDecimal(binary);
+    if(isBinary(number)) {
+        inputDecimal.value  = parseInt(number, 2);
         inputBinary.classList.remove("error");
         errorSpan.classList.add("hide");
     } else {
@@ -29,23 +30,6 @@ const isBinary = numbers => {
         }
     }
     return true;
-}
-
-const convertBinaryToDecimal = binary => {
-    let intBinary = parseInt(binary);
-    let count = 0;
-    let numberToConvert = 0;
-    let decimal = 0;
-
-    while (count < binary.length) {
-
-        numberToConvert = intBinary % 10;
-        decimal += numberToConvert * Math.pow(2, count);    
-        intBinary = parseInt(intBinary / 10);
- 
-        count++;
-    }
-    inputDecimal.value = decimal;
 }
 
 inputBinary.addEventListener("input", keyPressHandler);
